@@ -1,14 +1,47 @@
 html
   margin: 0
   padding: 0
-  
-.background
-  background:
-    image: url('/assets/img/header.png')
-    position: center
-    size: cover
-    repeat: no-repeat
-  min-width: 100%
-  min-height: 178px
-  max-height: 178px
-  float: left
+
+  .wrap
+    position: fixed
+    z-index: 10
+    display: flex
+    flex-direction: row
+
+    img
+      width: 85%
+      margin: 5px
+      margin-right: 0
+      padding-left: 20px
+
+    #header
+      width: 100vw
+      border-radius: 0
+      min-height: 100px
+      opacity: 0.7
+
+      .space
+        height: 3vh
+
+      .container-fluid
+        height: 100%
+
+        .navbar-toggle
+          margin-right: 40px
+
+        #myNavbar
+          height: 100%
+
+          #pages
+            height: 100%
+            margin: 0 auto
+
+            .myMar
+              margin-left: 2px
+
+            li
+              font-size: 17px
+              color: white
+
+            li:hover
+              background-color: grey
