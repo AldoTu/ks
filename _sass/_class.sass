@@ -1,8 +1,104 @@
-.bic
-  background:
-    image: url('/assets/img/classroom1.jpg') !important
-    position: center
-    size: cover
-    repeat: no-repeat
+.pc
+  position: absolute
+  box-shadow: 25px 20px 5px #20211F
   height: 100vh
   width: 100vw
+
+  .bic
+    background:
+      image: url('/assets/img/classroom1.jpg')
+      position: center
+      size: cover
+      repeat: no-repeat
+    height: 100vh
+    width: 100vw
+    position: absolute
+
+  .posts
+    margin: 50px 10%
+    margin-top: 25vh
+    display: flex
+    flex-direction: row
+    flex-basis: 30%
+    z-index: 8
+    position: relative
+    min-height: 180px
+
+    .post-thumbnail
+      min-height: 180px
+      width: 100%
+
+      .post-thumbnail-image
+        width: 100%
+        height: 100%
+        background:
+          position: center
+          repeat: no-repeat
+          size: cover
+        transition: all 300ms ease-in-out
+        border-radius: 5px 0px 0px 5px
+
+    .content-news
+      width: 100%
+      height: 100%
+      min-height: 180px
+      padding: 5%
+      border-radius: 0px 5px 5px 0px
+      transition: all 300ms ease-in-out
+      background-color: #48A9D2
+
+      a
+        text-decoration: none
+
+      h2
+        font-size: 28px
+        margin: 0
+        margin-bottom: 20px
+        transition: all 300ms ease-in-out
+        color: white
+
+      p
+        transition: all 300ms ease-in-out
+        color: white
+
+      .post__meta
+        display: inline-block
+        transition: all 300ms ease-in-out
+
+        span
+          margin-right: 15px
+          transition: all 300ms ease-in-out
+
+        .post__author
+          font-weight: bold
+          color: white
+
+        .post-meta
+          font-style: italic
+          color: white
+
+    &:hover
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2)
+
+      .post-thumbnail-image
+        transform: scale(1.2)
+
+      .content-news
+
+        h2
+          text-decoration: none
+
+        p
+          text-decoration: none
+
+        .post__meta
+          span
+
+            margin-right: 15px
+
+#fa
+  position: absolute
+  width: 10%
+  height: 10%
+  bottom: 40px
+  right: 40px

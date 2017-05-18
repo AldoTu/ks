@@ -1,0 +1,38 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+
+  {% include head.html %}
+
+  <body>
+
+    <div class="main-section">
+
+      {% include header.html %}
+
+      <div class="page-content">
+
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+          <div class="post-photo" style="background-image: url(/assets/img/{{ page.image }})"></div>
+          <div class="post-header">
+            <h1 class="post-title" itemprop="name headline">{{ page.subtitle }}</h1>
+            <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
+          </div>
+
+          <div class="post-content" itemprop="articleBody">
+            <div class="post-content-article">
+              <p>{{ content }}</p>
+            </div>
+          </div>
+          <div class="comments-post" id="disqus_thread"></div>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </body>
+
+</html>

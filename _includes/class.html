@@ -1,1 +1,47 @@
-<div class="bic"></div>
+<script type="text/javascript">
+$(document).ready(function(){
+
+  var count = 0;
+
+  $("#fa").click(function(){
+    if (count == 0) {
+      $(".wrap").animate({top: -110}, 425);
+      $('.pc').animate({bottom: 200}, 425);
+      //$("#footer-arrow").attr('transform', 'translate(0 0) rotate(180)');
+      //$("#footer-arrow").animate({svgTransform: 'translate(0 0) rotate(180)'});
+      count = 1;
+    }
+    else if (count == 1) {
+      $(".wrap").animate({top: 0}, 425);
+      $('.pc').animate({bottom: 0}, 425);
+      //$("#footer-arrow").attr('transform', 'translate(0 0) rotate(180)');
+      //$("#footer-arrow").animate({svgTransform: 'translate(0 0) rotate(180)'});
+      count = 0;
+    }
+  });
+
+});
+</script>
+<div class="pc">
+  <div class="bic"></div>
+  <div class="container-fluid">
+    {% for post in site.posts %}
+      <div class="posts">
+          <div class="post-thumbnail">
+            <div class="post-thumbnail-image" style="background-image: url(/assets/img/{{ post.image }})"></div>
+          </div>
+          <div class="content-news">
+            <a href="{{post.url | prepend: site.baseurl}}">
+            <h2 class="post-link">{{ post.title }}</h2>
+            <p>{{ post.lead }}</p>
+            <div class="post__meta">
+              <span class="post__author">{{ post.author }}</span>
+              <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+            </div>
+            </a>
+          </div>
+      </div>
+    {% endfor %}
+  </div>
+  <img src="/assets/img/arrow-white.svg" alt="arrow" id="fa">
+</div>
