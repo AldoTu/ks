@@ -1,5 +1,32 @@
-<div class="up">
-  <div class="bgu">
+<script type="text/javascript">
+$(document).ready(function(){
 
+  var count = 0;
+
+  $("#arrow").click(function(){
+    if (count == 0) {
+      $(".wrap").animate({top: -110}, 425);
+      $('.up').animate({bottom: 200}, 425);
+      $("#arrow").rotate({
+            angle: 0,
+            animateTo:180});
+      count = 1;
+    }
+    else if (count == 1) {
+      $(".wrap").animate({top: 0}, 425);
+      $('.up').animate({bottom: 0}, 425);
+      $("#arrow").rotate({
+            angle: 180,
+            animateTo:0});
+      count = 0;
+    }
+  });
+
+});
+</script>
+<div class="up">
+  <div class="bgu"></div>
+  <div class="container-fluid">
+    <img src="/assets/img/arrow-white.svg" alt="arrow" id="arrow" class="normal">
   </div>
 </div>
